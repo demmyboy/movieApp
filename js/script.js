@@ -70,7 +70,7 @@ next.addEventListener('click', () => {
     page++
     getMovies(API_URL + page++)
     console.log(API_URL + page++)
-    console('Page number is :' + page++)
+    console.log('Page number is :' + page++)
 
 })
 
@@ -78,5 +78,5 @@ previous.addEventListener('click', () => {
     page--
     getMovies(API_URL + page)
     console.log(API_URL + page)
-    console('Page number is :' + page--)
+    console.log('Page number is :' + page--)
 })
