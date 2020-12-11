@@ -1,15 +1,17 @@
 let page = 1
-const API_URL = 'https://api.themoviedb.org/3/discover/movie?api_key=0f8ac3ded3a89fee38b86f56c61c3f71&page=' + page
+const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0f8ac3ded3a89fee38b86f56c61c3f71&page=${page}`
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=0f8ac3ded3a89fee38b86f56c61c3f71&query="'
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const main = document.getElementById('main')
-const loadMore = document.getElementById('loadMore')
+const next = document.getElementById('next')
+const previous = document.getElementById('previous')
 
 
 // Get initial set of movies 
 getMovies(API_URL)
+console.log(API_URL)
 
 async function getMovies(url) {
     const res = await fetch(url)
@@ -64,7 +66,15 @@ function getClassByRate(vote) {
     }
 }
 
-loadMore.addEventListener('click', () => {
-    page++
+next.addEventListener('click', () => {
+    page += 1
+    getMovies(API_URL)
+    console.log(API_URL)
+
+})
+
+previous.addEventListener('click', () => {
+    page--
     getMovies(API_URL + page)
+    console.log(API_URL + page)
 })

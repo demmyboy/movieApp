@@ -110,3 +110,8 @@
     .movie:hover .overview {
         transform: translateY(0);
     }
+    
+    #next,
+    #previous {
+        cursor: pointer;
+    }
