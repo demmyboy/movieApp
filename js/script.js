@@ -67,9 +67,10 @@ function getClassByRate(vote) {
 }
 
 next.addEventListener('click', () => {
-    page += 1
-    getMovies(API_URL)
-    console.log(API_URL)
+    page++
+    getMovies(API_URL + page++)
+    console.log(API_URL + page++)
+    console('Page number is :' + page++)
 
 })
 
@@ -77,4 +78,5 @@ previous.addEventListener('click', () => {
     page--
     getMovies(API_URL + page)
     console.log(API_URL + page)
+    console('Page number is :' + page--)
 })
