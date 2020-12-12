@@ -111,7 +111,26 @@
         transform: translateY(0);
     }
     
-    #next,
-    #previous {
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn {
+        background-color: rgb(12, 11, 1) !important;
+        color: #fff;
+        border: 0;
+        border-radius: 6px;
         cursor: pointer;
+        font-family: inherit;
+        padding: 8px 30px;
+        margin: 20px;
+        font-size: 14px;
+    }
+    
+    .btn:disabled {
+        cursor: not-allowed;
+        background-color: #eee !important;
+        color: #000;
     }
